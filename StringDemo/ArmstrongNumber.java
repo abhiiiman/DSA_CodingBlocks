@@ -15,7 +15,7 @@ public class ArmstrongNumber {
     }
 
     public static boolean isArmStrong(int num) {
-        // TODO
+        // Done
         int sum = 0;
         int backup = num;
         int countDigit = numOfDigit(num);
@@ -27,7 +27,7 @@ public class ArmstrongNumber {
     }
 
     public static int numOfDigit(int num) {
-        // TODO
+        // Done
         int count = 0;
         while (num > 0){
             num /= 10;
