@@ -5,14 +5,16 @@ import static java.util.Collections.max;
 public class ArrayCustomFunctions {
     public static void main(String[] args) {
         int[] arr = {-10,20,30,40,-50};
-        print(arr);
-        int maximum = max(arr);
-        System.out.println();
-        System.out.println(maximum);
-        int myTarget1 = 50;
-        int myTarget2 = 5;
-        System.out.println(find(arr, myTarget1));
-        System.out.println(find(arr, myTarget2));
+//        print(arr);
+//        int maximum = max(arr);
+//        System.out.println();
+//        System.out.println(maximum);
+//        int myTarget1 = 50;
+//        int myTarget2 = 5;
+//        System.out.println(find(arr, myTarget1));
+//        System.out.println(find(arr, myTarget2));
+        int[] myArray = rotateArray(arr, 2);
+        print(myArray);
     }
 
     public static int[] print(int[] arr) {
@@ -39,5 +41,17 @@ public class ArrayCustomFunctions {
             }
         }
         return -1;
+    }
+
+    public static int[] rotateArray(int[] arr, int rotate) {
+        rotate = rotate % arr.length;
+        for (int r = 0; r < rotate; r++) {
+            int last = arr[arr.length-1];
+            for (int i = arr.length-2; i >= 0; i--) {
+                arr[i+1] = arr[i];
+            }
+            arr[0] = last;
+        }
+        return arr;
     }
 }
