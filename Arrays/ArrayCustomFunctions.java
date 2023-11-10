@@ -4,7 +4,7 @@ import static java.util.Collections.max;
 
 public class ArrayCustomFunctions {
     public static void main(String[] args) {
-        int[] arr = {-10,20,30,40,-50};
+        int[] arr = {10,20,30,40,50};
 //        print(arr);
 //        int maximum = max(arr);
 //        System.out.println();
@@ -13,8 +13,12 @@ public class ArrayCustomFunctions {
 //        int myTarget2 = 5;
 //        System.out.println(find(arr, myTarget1));
 //        System.out.println(find(arr, myTarget2));
-        int[] myArray = rotateArray(arr, 2);
-        print(myArray);
+//        int[] myArray = rotateArray(arr, 2);
+//        int[] myArray = reverseArray(arr);
+//        int[] myArray = directRotate(arr, 2);
+        print(arr); // original
+        reverseArray(0, arr.length-1, arr);
+        print(arr); // reversed
     }
 
     public static int[] print(int[] arr) {
@@ -53,5 +57,35 @@ public class ArrayCustomFunctions {
             arr[0] = last;
         }
         return arr;
+    }
+
+    public static void reverseArray(int i, int j, int[] arr) {
+        while (i < j){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
+    }
+
+    public static int[] directRotate(int[] arr, int rot) {
+        rot = rot % arr.length;
+        reverseArray(0, arr.length-1, arr);
+        reverseArray(0, rot-1, arr);
+        reverseArray(rot, arr.length-1, arr);
+        return arr;
+    }
+
+    public static void findAllSubArrays(int[] arr) {
+        for (int start = 0; start < arr.length; start++) {
+            for (int end = start; end < arr.length; end++) {
+                for (int i = start; i <= end; i++) {
+                    System.out.print(arr[i] + ' ');
+                }
+                System.out.println();
+            }
+        }
+        print(arr);
     }
 }

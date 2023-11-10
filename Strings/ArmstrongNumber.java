@@ -1,4 +1,4 @@
-package StringDemo;
+package Strings;
 
 public class ArmstrongNumber {
     public static void main(String[] args) {
