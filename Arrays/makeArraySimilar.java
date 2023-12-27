@@ -25,10 +25,10 @@ public class makeArraySimilar {
         Arrays.sort(target);
         long totalMoves;
 //        creating arraylists here
-        ArrayList<Integer> oddNums = new ArrayList<>();
-        ArrayList<Integer> oddTarget = new ArrayList<>();
-        ArrayList<Integer> evenNums = new ArrayList<>();
-        ArrayList<Integer> evenTarget = new ArrayList<>();
+        ArrayList<Integer> oddNums = new ArrayList<>(nums.length);
+        ArrayList<Integer> oddTarget = new ArrayList<>(nums.length);
+        ArrayList<Integer> evenNums = new ArrayList<>(nums.length);
+        ArrayList<Integer> evenTarget = new ArrayList<>(nums.length);
 //        separating the odd and even elements here.
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] % 2 == 0){

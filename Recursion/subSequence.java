@@ -17,7 +17,6 @@ public class subSequence {
         if (original.isEmpty()){
             System.out.print(current + " ");
             totalCombos++;
-            return;
         }
         else{
 //            BP - "abcd"
