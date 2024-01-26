@@ -13,12 +13,12 @@ class Node {
 public class BinaryTree {
     Node root;
 
-    public void insert(int data){
+    public void insert(int data) {
         root = insertNode(root, data);
     }
 
     private Node insertNode(Node root, int data) {
-        if (root == null){
+        if (root == null) {
             root = new Node(data);
         } else if (data < root.data) {
             root.left = insertNode(root.left, data);
@@ -28,12 +28,12 @@ public class BinaryTree {
         return root;
     }
 
-    public void printInOrder(){
+    public void printInOrder() {
         inOrderRec(root);
     }
 
     private void inOrderRec(Node root) {
-        if (root != null){
+        if (root != null) {
             inOrderRec(root.left);
             System.out.print(root.data + " ");
             inOrderRec(root.right);
@@ -45,7 +45,7 @@ public class BinaryTree {
     }
 
     private void preOrderRec(Node root) {
-        if (root != null){
+        if (root != null) {
             System.out.print(root.data + " ");
             preOrderRec(root.left);
             preOrderRec(root.right);
@@ -57,10 +57,29 @@ public class BinaryTree {
     }
 
     private void postOrderRec(Node root) {
-        if (root != null){
+        if (root != null) {
             postOrderRec(root.left);
             postOrderRec(root.right);
             System.out.print(root.data + " ");
         }
+    }
+
+    public void treeDisplay() {
+        DisplayTree(root);
+    }
+
+    private void DisplayTree(Node node) {
+        if (node == null) {
+            return;
+        }
+        // self work - In Order Manner
+        String levelPath = "";
+        levelPath += node.left == null ? "." : node.left.data;
+        levelPath += " -> " + node.data + " <- ";
+        levelPath += node.right == null ? "." : node.right.data;
+        System.out.println(levelPath);
+//        leap of faith.
+        DisplayTree(node.left);
+        DisplayTree(node.right);
     }
 }
