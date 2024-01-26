@@ -121,4 +121,17 @@ public class BinaryTree {
         int rightMax = TreeMax(node.right);
         return Math.max(node.data, Math.max(leftMax, rightMax));
     }
+
+    public int treeHeight() {
+        return TreeHeight(root);
+    }
+
+    private int TreeHeight(Node node) {
+        if (node == null){
+            return -1;
+        }
+        int leftHeight = TreeHeight(node.left);
+        int rightHeight = TreeHeight(node.right);
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
 }
