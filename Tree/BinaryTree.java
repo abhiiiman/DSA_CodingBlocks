@@ -88,11 +88,24 @@ public class BinaryTree {
     }
 
     private int TreeSum(Node node) {
-        if (node == null){
+        if (node == null) {
             return 0;
         }
         int leftSum = TreeSum(node.left);
         int rightSum = TreeSum(node.right);
         return leftSum + rightSum + node.data;
+    }
+
+    public int treeSize() {
+        return TreeSize(root);
+    }
+
+    private int TreeSize(Node node) {
+        if (node == null) {
+            return 0;
+        }
+        int leftSize = TreeSize(node.left);
+        int rightSize = TreeSize(node.right);
+        return leftSize + rightSize + 1;
     }
 }
