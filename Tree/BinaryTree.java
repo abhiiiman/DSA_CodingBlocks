@@ -108,4 +108,17 @@ public class BinaryTree {
         int rightSize = TreeSize(node.right);
         return leftSize + rightSize + 1;
     }
+
+    public int treeMax() {
+        return TreeMax(root);
+    }
+
+    private int TreeMax(Node node) {
+        if (node == null){
+            return 0;
+        }
+        int leftMax = TreeMax(node.left);
+        int rightMax = TreeMax(node.right);
+        return Math.max(node.data, Math.max(leftMax, rightMax));
+    }
 }
