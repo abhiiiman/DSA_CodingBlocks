@@ -82,4 +82,17 @@ public class BinaryTree {
         DisplayTree(node.left);
         DisplayTree(node.right);
     }
+
+    public int treeSum() {
+        return TreeSum(root);
+    }
+
+    private int TreeSum(Node node) {
+        if (node == null){
+            return 0;
+        }
+        int leftSum = TreeSum(node.left);
+        int rightSum = TreeSum(node.right);
+        return leftSum + rightSum + node.data;
+    }
 }
