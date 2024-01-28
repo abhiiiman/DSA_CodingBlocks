@@ -4,7 +4,13 @@ import java.util.Arrays;
 
 public class HouseRob2 {
     public static void main(String[] args) {
-        int[] array = {1, 2, 3, 1};
+        int[] array = {1,2,3,1};
+        if (array.length <= 1) { // {0}
+            System.out.println(array[0]); //return should be used (perfect for LC)
+        }
+        if (array.length == 2) {
+            System.out.println(Math.max(array[0], array[1]));
+        }
 //        create 2 arrays here for 2 cycle cases
         int[] skipLastHouse = new int[array.length - 1];
         int[] skipFirstHouse = new int[array.length - 1];
