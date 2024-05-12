@@ -2,7 +2,7 @@ package Strings;
 
 public class palindromicSubString {
     public static void main(String[] args) {
-        String str = "nittin";
+        String str = "babad";
         solve(str);
     }
 
